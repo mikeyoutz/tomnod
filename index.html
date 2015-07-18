@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>::Tomnod Hunduras Campaign::</title>
+
+        <!--Make all Fixes (6 total) including moving container style to the main style sheet-->
+        <!--Need to figure out how to get icons to populate form get data-->
+        <!--Fix.. Might be interesting to included this data if I can figure out how
+        total_area: 3962.6420033322total_clusters: 780total_maps: 22057total_tags: 3655views: 138420-->
+
+        
+        <!--Fix.. Remove sublime hints for final 
+        Sublime Shortcuts:
+        Indent Multiple Lines: cntr + {
+        Comment out multiple lines: cntrl + shift + /
+        Change word in multiple places: double-click, then cntrl+D until all are selected, then paste replacement word
+        -->
+
+<!--From here down are links from the Morris Map site that need to be included in the head for Morris chart functionality--> 
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> 
+        <!--Above Link: Minified jquery link hosted by Google-a little faster download and a little cheaper on jquery's bandwidth costs-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <!--Above Link: Raphael is a set of algorhythms for vector rendering-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<!--From here up are links from the Morris Map site that need to be included in the head for Morris chart functionality--> 
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"><!--This is minified bootstrap library link-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"><!--This the basic dark bootstrap theme-->
+        <!--Fix... play with the bootstrap theme settings and consider making a custom theme if time allows-->
+
+        <!--Fix... Add style sheet in here-->
+
+        <style>
+            body {
+                background: #333333;
+            }
+
+            .container {
+                margin-top: 2%;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container"><!--"Container" is a bootstrap selector that allows for responsive container-->
+            <div class="row"><!--"Row" is a bootstrap selector that must be used in order for Columns to be used-->
+                <div class="col-md-12"><!--Fix.. Play with -->
+                    <div id="tomnod-chart" style="height: 550px;"></div><!--Fix.. play with this dimension and see what looks better-->
+                </div>
+            </div><!--Row Close-->
+        </div><!-- Container close-->
+    </body>
+
+    <script>
+
+
+    //This is the beginning of the API call//
+$.ajax({
+  dataType: "json", //when I spec json here, I cut down the amount of contigencies that I need to code for in my return/success//
+  url: "https://s3.amazonaws.com/intern-coding-challenge/counts.json", //I added in quotes and kept the comma//
+  //data: data, I grabbed this code from jQuery and am not sending the data to the server so I'm just commenting it out//
+  success: function( response ) { // response name is arbitrary// //success is a keyword relative to jQuery//
+    console.log(response) //this allows me to see the console log of the data returned from tomnod so I can customize the Morris Charts//
+
+   
+//Morris Triangular Chart Start--This must be inside the ajax API call so that "response" is correlated with get data becauss it's in same scope//
+ Morris.Area({
+            element: 'tomnod-chart',
+            data: [
+              {
+                y: '2015-07-01' //Fictitious start date//
+              , a: 0 //Swimming Pool//
+              , b: 0 //Tennis Court//
+              , c: 0 //Soccer Field//
+              },
+
+              {
+                y: '2015-07-15' //fictitious end date//
+              , a: response.tags[0].count //Swimming Pool//
+              , b: response.tags[1].count //Tennis Court//
+              , c: response.tags[2].count //Soccer Field//
+              }
+            ],
+            xkey: 'y',  // The name of the data record attribute that contains x-values.//
+            ykeys: ['a', 'b', 'c'], // A list of names of data record attributes that contain y-values.//
+            labels: [response.tags[0].name, response.tags[1].name, response.tags[2].name]  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart. //
+          });
+    //Morris Triangular Chart End
+
+  },//failure warning start, including the comma before this comment, this part alert offline user if they can't get data from the server//
+  fail: function() {
+    console.log("Sorry there was a problem accessing server.")
+  }//end of failure warning//
+});
+//This is the end of the API call//
+
+
+
+//Original Morris code downloaded-Start//
+
+       /* new Morris.Line({
+          // ID of the element in which to draw the chart.
+          element: 'myfirstchart',
+          // Chart data records -- each entry in this array corresponds to a point on
+          // the chart.
+          data: [
+            { year: '2008', value: 20 },
+            { year: '2009', value: 10 },
+            { year: '2010', value: 5 },
+            { year: '2011', value: 5 },
+            { year: '2012', value: 20 }
+          ],
+          // The name of the data record attribute that contains x-values.
+          xkey: 'year',
+          // A list of names of data record attributes that contain y-values.
+          ykeys: ['value'],
+          // Labels for the ykeys -- will be displayed when you hover over the
+          // chart.
+          labels: ['Value']
+        });*/
+//Original Morris code downloaded-End//
+
+
+    </script>
+</html>
