@@ -1,0 +1,369 @@
+            body {
+              background: #333333;
+            }
+
+            * {
+              margin: 0 auto;
+              padding: 0;
+              border: 0;
+            }
+
+            .container {
+              margin: 2%;
+            }
+
+            /*This over-rides value of the cdn stroke spec for the style called .ct bar*/
+            .ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+              stroke: #000000;
+              stroke-width: 80px;
+            }
+
+            /*This over-rides value of the cdn stroke spec for the style called .ct bar*/
+            .ct-series-b .ct-bar, .ct-series-b .ct-line, .ct-series-b .ct-point, .ct-series-b .ct-slice-donut {
+              stroke: #2577b5;
+              stroke-width: 80px;
+            }
+
+            .dg-logo {
+              color: #fff;
+              position: absolute;
+              padding: 15px;
+              top: 29px;
+              left: 105px
+            }
+
+            .upper-header {
+              background-image: url(http://www.youtzdesign.com/clients-temp/tom-nod/images/logo_188x50.png);
+              background-repeat: no-repeat;
+              height: 100px;
+              display: block;
+              width: 100%;
+              position: relative;
+              float: left;
+              text-decoration: none;
+              margin: 0 auto;
+            }
+
+            .header-links {
+              float-right;
+              position: relative;
+              display: block;
+              margin: 0 auto;
+            }
+
+            .btn-top-one {
+              -webkit-border-radius: 5;
+              -moz-border-radius: 5;
+              border-radius: 5px;
+              font-family: Arial;
+              color: #ffffff;
+              font-size: 20px;
+              background: #b7b7b0;
+              padding: 10px 20px 10px 20px;
+              text-decoration: none;
+              width: 105px;
+              float: right;
+              height: 48px;
+              position: relative;
+              display: block;
+            }
+
+            .btn-top-two {
+              -webkit-border-radius: 5;
+              -moz-border-radius: 5;
+              border-radius: 5px;
+              font-family: Arial;
+              color: #ffffff;
+              font-size: 20px;
+              background: #b7b7b0;
+              text-decoration: none;
+              width: 50px;
+              float: right;
+              height: 48px;
+              position: relative;
+              display: block;
+              padding-left: 14px;
+              padding-top: 13px;
+              margin-right: -40px;
+            }
+
+            .btn-top-one:hover {
+              background: #3498db;
+              text-decoration: none;
+            }
+
+            .btn-top-two:hover {
+              background: #3498db;
+              text-decoration: none;
+            }
+
+            .line-1 {
+              height: 2px;
+              background-color: #ccccc5;
+              position: relative;
+              margin: 0 auto;
+              width: 100%;
+              display: block;
+            }
+
+            .clear {
+              clear: both;
+            }
+
+            .header-text-block {
+              position: relative;
+              margin: 0 auto;
+              width: 100%;
+              height: 20%;
+              display: block;
+              border-radius: 5px;
+              margin-top: 20px;
+              color: #ccccc5;
+            }
+
+            .icon-box-outer {
+              background-color: #494848;
+              position: relative;
+              margin: 0 auto;
+              width: 15%;
+              height: 305px;
+              display: inline-block;
+              border-radius: 5px;
+              border-color: #ccccc5;
+              border-style: solid;
+              border-radius: 5px;
+              border-width: 1px;
+              overflow: hidden;
+            }
+
+            .icon-box-small {
+              margin: 0 auto;
+              background-color: #969292;
+              display: block;
+              position: relative;
+              margin-top: 10px;
+              width: 83px;
+              height: 83px;
+              border-radius: 5px;
+              margin-top: 1em;
+              padding-top: 4px;
+              padding-left: 4px;
+              border-color: #ccccc5;
+              border-style: solid;
+              border-radius: 5px;
+              border-width: 1px;
+            }
+
+            .icon-box-small-white {
+              background-color: white;
+              border-color: #333333;
+              border-style: solid;
+              border-radius: 5px;
+              border-width: 2px;
+            }
+
+            .tomnod-hztl-chart-wrap {
+              margin-left: 1em;
+              background-color: #494848;
+              position: relative;
+              display: inline-block;
+              width: 82%;
+              height: 305px;
+              border-color: #ccccc5;
+              border-style: solid;
+              border-radius: 5px;
+              border-width: 1px;
+              float: right;
+              margin-bottom: 2em;
+            }
+
+            .tomnod-hztl-chart-wrap-text {
+              width: 98%;
+              display: block;
+              position: relative;
+              height: 20%;
+              margin: 0 auto;
+              margin-top: .5em;
+              margin-bottom: 1em;
+              background-color: #333333;
+              color: #ccccc5;
+              border-radius: 5px;
+              padding: 1em;
+              font-size: 1em;
+              font-weight: bold;
+              text-align: center;
+            }
+
+            .tomnod-hztl-chart-bar {
+              width: 95%;
+              display: block;
+              position: relative;
+              height: 70%;
+              margin: 0 auto;
+              margin-top: .5em;
+              margin-bottom: 1em;
+              background-color: red;
+              color: white;
+              border-radius: 5px;
+              padding: 1em;
+              font-size: 1em;
+              font-weight: bold;
+            }
+
+            .tomnod-hztl-chart-info-top {
+              width: 96%;
+              display: block;
+              position: relative;
+              height: 10%;
+              margin: 0 auto;
+              margin-bottom: 1em;
+              color: black;
+              border-radius: 5px;
+              text-transform: uppercase;
+              font-weight: bold;
+            }
+
+            .tomnod-hztl-chart-wrap-inner {
+              width: 96%;
+              display: block;
+              position: relative;
+              height: 60%;
+              margin: 0 auto;
+              margin-bottom: 1em;
+              background-color: #969292;
+              color: white;
+              border-radius: 5px;
+              padding-top: 1em;
+              overflow: hidden;
+            }
+
+            .tomnod-footer {
+              margin-top: 200px;
+              height: 35px;
+              color: black;
+              background-color: #969292;
+              display: block;
+              position: relative;
+              margin-bottom: 5%;
+              padding-top: 10px;
+              border-radius: 5px;
+            }
+
+            .tn-footer-text {
+              margin: 0 auto;
+              width: 45%;
+            }
+
+            .span-spacer {
+              padding-left: 20px;
+            }
+
+            .sport-square-n-chart {
+              display: inline-block;
+              position: relative;
+              width: 80px;
+              margin-left: 1em;
+              margin-top: 25px;
+            }
+
+            #tomnod-chart {
+              border-color: #ccccc5;
+              border-style: solid;
+              border-radius: 5px;
+              border-width: 1px;
+              width: 100%;
+              overflow: hidden;
+            }
+
+            #tomnod-bar-chart {
+              width: 400px; 
+              position: relative; 
+              display: inline-block; 
+              float: right;
+            }
+
+            .legend-outr-wrap {
+              margin-top: -51em;
+              margin-left: 2em;
+              border-color: #ccccc5;
+              border-style: solid;
+              border-radius: 5px;
+              border-width: 1px;
+              width: 253px;
+              height: 120px;
+              position: relative;
+              display: block;
+              font-size: .4em;
+              padding-top: 10px;
+              padding-left: 10px;
+            }
+
+            .legend-sport-wrap {
+              position: relative;
+              display: inline-block;
+              margin-right: 10px;
+              height: 80px;
+              width: 70px;
+              float: left;
+            }
+
+            .legend-swim-swatch {
+              width: 95%;
+              height: 40px;
+              position: relative;
+              display: block;
+              background-color: #2577b5;
+              margin: 0 auto;
+              margin-bottom: 1em;
+            }
+
+            .legend-tennis-swatch {
+              width: 95%;
+              height: 40px;
+              position: relative;
+              display: block;
+              background-color: #a7b3bc;
+              margin: 0 auto;
+              margin-bottom: 1em;
+            }
+
+            .legend-soccer-swatch {
+              width: 95%;
+              height: 40px;
+              position: relative;
+              display: block;
+              background-color: #7cb47c;
+              margin: 0 auto;
+              margin-bottom: 1em;
+            }
+
+            .legend-text {
+              position: relative;
+              display: block;
+              margin: 0 auto;
+              text-align: center;
+              font-weight: bold;
+              font-size: 10px;
+              color: white;
+            }
+
+            .legend-text-note {
+              position: relative;
+              display: block;
+              margin: 0 auto;
+              font-style: italic;
+              font-size: 9.5px;
+              color: #ccccc5;
+              margin-top: 5px;
+              text-align: center;
+            }
+
+            .graph-label {
+              position: relative;
+              display: block;
+              margin: 0 auto;
+              width: 100%;
+              font-size: 1.5em;
+              color: #ccccc5;
+              margin-top: 5px;
+            }

@@ -3,377 +3,120 @@
     <head>
         <title>::Tomnod Hunduras Campaign::</title>
 
-        <!--Make all Fixes (6 total) including moving container style to the main style sheet-->
-        <!--Need to figure out how to get icons to populate form get data-->
-        <!--Fix.. Might be interesting to included this data if I can figure out how
-        total_area: 3962.6420033322total_clusters: 780total_maps: 22057total_tags: 3655views: 138420-->
 
-
-        <!--Fix.. Remove sublime hints for final
-        Sublime Shortcuts:
-        Indent Multiple Lines: cntr + {
-        Comment out multiple lines: cntrl + shift + /
-        Change word in multiple places: double-click, then cntrl+D until all are selected, then paste replacement word
-
-        alt-tab
-        -->
-
-
-
-<!--From here down are links from the Morris Map site that need to be included in the head for Morris chart functionality-->
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-
+        <!--CDN Scripts start-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <!--Above Link: Minified jquery link hosted by Google-a little faster download and a little cheaper on jquery's bandwidth costs-->
+
         <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
         <!--Above Link: Raphael is a set of algorhythms for vector rendering-->
+
         <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-<!--From here up are links from the Morris Map site that need to be included in the head for Morris chart functionality-->
-
-
+        <!--Above Link: Morris charts minified scripts-->
 
         <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+        <!--Above Link: Chartist charts minified scripts-->
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"><!--This is minified bootstrap library link-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"><!--This the basic dark bootstrap theme-->
-        <!--Fix... play with the bootstrap theme settings and consider making a custom theme if time allows-->
+        <!--CDN Scripts End-->
+
+
+        <!--CDN CSS Links Start-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!--Above Link: Bootstrap CSS general rules minified-->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <!--Above Link: Bootstrap CSS container theme rules minified-->
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+        <!--Above Link: Bootstrap CSS general rules minified-->
 
         <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-        <!--Fix... Add style sheet in here-->
+        <!--Above LinK: This is minified chartist library link-->
 
-        <style>
-
-            body {
-                background: #333333;
-            }
+        <!--CDN CSS Links End-->
 
 
-            * {
-              margin: 0 auto;
-              padding: 0;
-              border: 0;
-            }
+        <!-- Style Sheet Link -->
+        <link rel="stylesheet" type="text/css" href="tomnod-styles.css" />
 
-            .container {
-                margin: 2%;
-            }
-
-            /*This over-rides value of the cdn stroke spec for the style called .ct bar*/
-            .ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
-              stroke: #000000;
-              stroke-width: 80px;
-            }
-
-            .ct-series-b .ct-bar, .ct-series-b .ct-line, .ct-series-b .ct-point, .ct-series-b .ct-slice-donut {
-              stroke: #2577b5;
-              stroke-width: 80px;
-            }
-
-            .upper-header {
-              background-image: url(http://www.youtzdesign.com/clients-temp/tom-nod/images/logo_188x50.png);
-              background-repeat: no-repeat;
-              /*border-radius: 5px;*/
-              height: 100px;
-              display: block;
-              width: 95%;
-/*              text-align: center;
-              color: white;*/
-              position: relative;
-              float: left;
-              text-decoration: none;
-              margin: 0 auto;
-            }
-
-            .header-links {
-              float-right;
-              position: relative;
-              display: block;
-              margin: 0 auto;
-            }
-
-            .btn-top-one {
-              -webkit-border-radius: 5;
-              -moz-border-radius: 5;
-              border-radius: 5px;
-              font-family: Arial;
-              color: #ffffff;
-              font-size: 20px;
-              background: #b7b7b0;
-              padding: 10px 20px 10px 20px;
-              text-decoration: none;
-              width: 105px;
-              float: right;
-              height: 48px;
-              position: relative;
-              display: block;
-              margin-right: 1%;
-            }
-
-            .btn-top-two {
-              -webkit-border-radius: 5;
-              -moz-border-radius: 5;
-              border-radius: 5px;
-              font-family: Arial;
-              color: #ffffff;
-              font-size: 20px;
-              background: #b7b7b0;
-              text-decoration: none;
-              width: 50px;
-              float: right;
-              height: 48px;
-              position: relative;
-              display: block;
-              padding-left: 14px;
-              padding-top: 13px;
-              margin-right: -40px;
-            }
-
-            .btn-top-one:hover {
-              background: #3498db;
-              text-decoration: none;
-            }
-
-            .btn-top-two:hover {
-              background: #3498db;
-              text-decoration: none;
-            }
-
-            .line-1 {
-              height: 2px;
-              background-color: #ccccc5;
-              position: relative;
-              margin: 0 auto;
-              width: 100%;
-              display: block;
-            }
-
-            .clear {
-              clear: both;
-            }
-
-            .header-text-block {
-              position: relative;
-              margin: 0 auto;
-              width: 100%;
-              height: 20%;
-              display: block;
-              border-radius: 5px;
-              margin-top: 20px;
-              color: #ccccc5;
-            }
-
-            .icon-box-outer {
-              background-color: #494848;
-              position: relative;
-              margin: 0 auto;
-              width: 15%;
-              height: 305px;
-              display: inline-block;
-              border-radius: 5px;
-              border-color: #ccccc5;
-              border-style: solid;
-              border-radius: 5px;
-              border-width: 1px;
-            }
-
-
-            .icon-box-small {
-              margin: 0 auto;
-              background-color: #969292;
-              display: block;
-              position: relative;
-              margin-top: 10px;
-              width: 83px;
-              height: 83px;
-              border-radius: 5px;
-              margin-top: 1em;
-              /* margin-left: 1em; */
-              padding-top: 4px;
-              padding-left: 4px;
-              border-color: #ccccc5;
-              border-style: solid;
-              border-radius: 5px;
-              border-width: 1px;
-
-            }
-
-            .icon-box-small-white {
-              background-color: white;
-              border-color: #333333;
-              border-style: solid;
-              border-radius: 5px;
-              border-width: 2px;
-            }
-
-
-            .tomnod-hztl-chart-wrap {
-              margin-left: 1em;
-              background-color: #494848;
-              position: relative;
-              display: inline-block;
-              width: 82%;
-              height: 305px;
-              border-color: #ccccc5;
-              border-style: solid;
-              border-radius: 5px;
-              border-width: 1px;
-              float: right;
-              margin-bottom: 2em;
-            }
-
-            .tomnod-hztl-chart-wrap-text {
-              width: 96%;
-              display: block;
-              position: relative;
-              height: 20%;
-              margin: 0 auto;
-              margin-top: .5em;
-              margin-bottom: 1em;
-              background-color: #333333;
-              color: white;
-              border-radius: 5px;
-              padding: 1em;
-              font-size: 1em;
-              font-weight: bold;
-            }
-
-            .tomnod-hztl-chart-bar {
-              width: 95%;
-              display: block;
-              position: relative;
-              height: 70%;
-              margin: 0 auto;
-              margin-top: .5em;
-              margin-bottom: 1em;
-              background-color: red;
-              color: white;
-              border-radius: 5px;
-              padding: 1em;
-              font-size: 1em;
-              font-weight: bold;
-            }
-
-            .inner-hztl-chart-bar-wrap {
-              }
-
-            .tomnod-hztl-chart-info-top {
-              width: 96%;
-              display: block;
-              position: relative;
-              height: 10%;
-              margin: 0 auto;
-              margin-bottom: 1em;
-              /*background-color: purple;*/
-              color: black;
-              border-radius: 5px;
-              text-transform: uppercase;
-              font-weight: bold;
-            }
-
-            .tomnod-hztl-chart-wrap-inner {
-              width: 96%;
-              display: block;
-              position: relative;
-              height: 60%;
-              margin: 0 auto;
-              margin-bottom: 1em;
-              background-color: #969292;
-              color: white;
-              border-radius: 5px;
-              padding-top: 1em;
-            }
-
-            .tomnod-footer {
-              height: 40px;
-              color: black;
-              background-color: #ddddd6;
-              display: block;
-              position: relative;
-              margin-bottom: 5%;
-              padding-top: 10px;
-            }
-
-            .tn-footer-text {
-              margin: 0 auto;
-              width: 45%;
-            }
-
-            .span-spacer {
-              padding-left: 20px;
-            }
-
-            .sport-square-n-chart {
-              display: inline-block;
-              position: relative;
-              width: 80px;
-              margin-left: 1em;
-              margin-top: 25px;
-            }
-
-            #tomnod-chart {
-              margin-top: 1em;
-              border-color: #ccccc5;
-              border-style: solid;
-              border-radius: 5px;
-              border-width: 1px;
-              width: 100%;
-              overflow: hidden;
-            }
-
-        </style>
 
     </head>
     <body>
+
+
+
+
         <div class="container"><!--"Container" is a bootstrap selector that allows for responsive container-->
 
             <div class="row"><!--"Row" is a bootstrap selector that must be used in order for Columns to be used-->
-                <div class="col-md-8 col-md-offset-3"><!--Fix.. Play with -->
+                <div class="col-md-8 col-md-offset-4"><!--The "col-md-offset-3" allows container to center on pg -->
 
 
+                 
+
+                  
+
+
+
+
+                  <!--Header Start-->
                   <div class="upper-header">
 
-                    <div class="header-links"> <!--Upper Buttons-->
-                      <div class="btn-top-two">
-                        <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                    <div class="header-links"> <!--Upper Buttons and logo Start-->
+
+                       <div class="dg-logo">
+                    <img src="http://www.youtzdesign.com/clients-temp/tom-nod/images/digitalglobe-logo-fordarkbg-mike.png" alt="Powered by DigitalGlobe" width="197" height="30";>
+                  </div>
+                      
+                     <!--  <div class="btn-top-two">
+                        <span class="glyphicon glyphicon-bell"></span>
+                      </div> -->
+
+                       <a href="http://www.tomnod.com/login">
+                    <div class="btn-top-one">
+                        Sign In
+                      </div></a>
+
+                      <div class="clear">
                       </div>
 
-                      <div class="btn-top-one">
-                        Sign In
-                      </div>
-                    </div>
+                    </div><!--Upper Buttons and logo End-->
 
                   </div>
+                  <!--Header End-->
 
                   <div class="clear">
                   </div>
 
-                  <div class="line-1">
+
+
+
+                  <div class="line-1"> <!--Graphic Line-->
                   </div>
+
+
+                 
 
                   <div class="header-text-block">
                     <h1>Honduras Campaign Results</h1>
-                    <p>In our Honduran Campaign, the world helped us to identifiy swimming pools, tennis courts and soccer fields which, in-turn, helped us to bring aid to this tragedy.
+                    <p>In our Honduran Campaign, the world helped us identifiy swimming pools, tennis courts and soccer fields which, in-turn, helped us to bring aid to this tragedy.
                     </p>
                     <br>
-
-
                   </div>
 
 
 
 
+                <!--Upper Horizontal Bar Chart Start-->
 
-
-
-
-                  <!--Clickable Icons-->
+                  <!--Clickable Icons Start-->
                   <div class="icon-box-outer">
 
                     <div class="icon-box-small">
                       <img class="tomnod-tag-1" src="" width="75" /><!--This is the swimming icon-->
                     </div>
 
-                    <div class="icon-box-small icon-box-small-white">
+                    <div class="icon-box-small">
                       <img class="tomnod-tag-2" src="" width="75" /><!--This is the tennis icon-->
                     </div>
 
@@ -382,203 +125,305 @@
                     </div>
 
                   </div>
+                  <!--Clickable Icons End-->
 
 
 
 
-
-
+                  <!--Bar Graphic Bar Chart and Text Start-->
                   <div class="tomnod-hztl-chart-wrap">
+
                     <div class="tomnod-hztl-chart-wrap-text">
-                    Clicking on any of these three icons will bring up the statics for that data piece.
+                    Clicking on any of these three icons will bring up the statistics for that data type.
                     </div>
 
                     <div class="tomnod-hztl-chart-wrap-inner">
+
+                      <!--Static Start Info-->
                       <div class="tomnod-hztl-chart-info-top">
-                        Tennis Count: <b>326</b>
+                        Tennis Courts: <b>326</b>
                       </div>
+
                       <div class="inner-hztl-chart-bar-wrap">
+
+                        <!--Changing Sport Icon-->
                         <div class="sport-square-n-chart">
                         <img class="tomnod-tag-featured" src="" width="75"/>
                         </div>
-                        <div id="tomnod-bar-chart" style="width: 400px; position: relative; display: inline-block; float: right;"></div>
+
+                        <!--Static Start Info-->
+                        <div id="tomnod-bar-chart"></div>
+
                       </div>
                     </div>
                   </div>
+                  <!--Bar Graphic Bar Chart and Text End-->
+
+<div class="clear">
+                    </div>
 
 
-
+                  <!--Triangular Graphic Chart Start-->
+                  <div class="graph-label">
+                    RELATIVE COMPARISON OF DATA TYPES
+                  </div>
 
                   <div>
 
-                    <div id="tomnod-chart" style="height: 300px;">
-                    </div><!--Fix.. play with this dimension and see what looks better-->
-                    <br>
-                    <br>
-
-                    <br>
-                    <br>
+                    <div id="tomnod-chart" style="height: 300px; ">
+                    </div>
+                    
                   </div>
+                  <!--Triangular Graphic Chart End-->
 
+
+
+
+                  <!--Triangular Chart Legend Start-->
+                  <div class="legend-outr-wrap">
+
+
+                    <div class="legend-sport-wrap">
+
+                      <div class="legend-swim-swatch">
+                      </div>
+
+                      <div class="legend-text">Swimming <br>Pools
+                      </div>
+
+                    </div>
+
+
+                    <div class="legend-sport-wrap">
+
+                      <div class="legend-tennis-swatch">
+                      </div>
+
+                      <div class="legend-text">Tennis <br>Courts
+                      </div>
+
+                    </div>
+
+
+                    <div class="legend-sport-wrap">
+
+                      <div class="legend-soccer-swatch">
+                      </div>
+
+                      <div class="legend-text">Soccer <br>Fields
+                      </div>
+
+                    </div>
+
+
+                    <div class="clear">
+                    </div>
+
+
+                    <div class="legend-text-note">
+                      *NOTE: Triangles in graph don't overlay, they stack.
+                    </div>
+
+                    </div>
+
+                  <!--Triangular Chart Legend End-->
+
+
+
+
+                  <!--Footer Start-->
                   <div class="tomnod-footer">
+
                     <div class="tn-footer-text">2015 Tomnod Satellite <span class="span-spacer">Imagery by DigitalGlobe</span></div>
+
                   </div>
+                  <!--Footer End-->
 
 
-            </div><!--12 col Close-->
-          </div> <!--row close-->
+
+
+            </div><!--2nd 12 col Close-->
+          </div> <!--2nd row close-->
+
+
+
+
         </div><!-- Container close-->
     </body>
 
+
+
+
     <script>
 
-
     //This is the beginning of the API call//
-$.ajax({
-  dataType: "json", //when I spec json here, I cut down the amount of contigencies that I need to code for in my return/success//
-  url: "https://s3.amazonaws.com/intern-coding-challenge/counts.json", //I added in quotes and kept the comma//
-  //data: data, I grabbed this code from jQuery and am not sending the data to the server so I'm just commenting it out//
-  success: function( response ) { // response name is arbitrary// //success is a keyword relative to jQuery//
-    console.log(response) //this allows me to see the console log of the data returned from tomnod so I can customize the Morris Charts//
+      $.ajax({
+        dataType: "json", //when I spec json here, I cut down the amount of contigencies that I need to code for in my return/success because I'll only have to code for json//
+
+        url: "https://s3.amazonaws.com/intern-coding-challenge/counts.json", //I added in quotes and kept the comma//
+        //data: data, //I grabbed this data code from jQuery and am not sending the data to the server so I'm just commenting it out//
+
+        success: function( response ) { // The name "response" is arbitrary// //success is a keyword relative to jQuery, which means upon success, do the following//
+
+          console.log(response) //This allows me to see the console log of the data returned from tomnod so I can customize the Morris Charts//
 
 
 
-// Updating the src of our image with the tag icon_url. These are the three icons: relating the urls for each with the associated dynamic data from the ajax call.
+    //These are the three icons: relating the urls for each with the associated dynamic data from the ajax call.
 
-    //This part '.tomnod-tag-1' refers to the CSS style I made
+      //This part '.tomnod-tag-1' refers to the CSS style I made. // Displays tennis icon in center on load
+      $('.tomnod-tag-featured').attr('src', 'http://tomnod.com/' + response.tags[1].icon_url)
+      //This is get for swimming//
+      $('.tomnod-tag-1')
+          // Below: Displays Swim icon on left at load
+          .attr('src', 'http://tomnod.com/' + response.tags[0].icon_url)//This is get for swim icon url//
 
-    $('.tomnod-tag-featured').attr('src', 'http://tomnod.com/' + response.tags[1].icon_url)
-
-    $('.tomnod-tag-1')
-        .attr('src', 'http://tomnod.com/' + response.tags[0].icon_url)//This is get for swimming//
-        .click(function(){
-
-            $('.tomnod-tag-featured').attr('src', 'http://tomnod.com/' + response.tags[0].icon_url)
-            $('.tomnod-hztl-chart-info-top').html(response.tags[0].name + ': ' + response.tags[0].count)
-
-            barchart.update({// Updating bar chart
-              labels: [1],
-              series: [
-                [3000],
-                [response.tags[0].count]
-               
-              ]
-            },{
-              seriesBarDistance: 0, //relative bar offset distance
-              reverseData: false,//Fix.. Change to true
-              horizontalBars: true,
-              axisY: {
-                offset: 1
-              }
-            },false) // Update bar chart end
-
-        })
-
-    $('.tomnod-tag-2')
-        .attr('src', 'http://tomnod.com/' + response.tags[1].icon_url)//This is get for tennis//
-        .click(function(){
-
-                $('.tomnod-tag-featured').attr('src', 'http://tomnod.com/' + response.tags[1].icon_url)
-                $('.tomnod-hztl-chart-info-top').html(response.tags[1].name + ': ' + response.tags[1].count)
-
-                barchart.update({
-                  labels: [2],
-                  series: [
-                    [3000],
-                    [response.tags[1].count]
-                  ]
-                },{
-                  seriesBarDistance: 0, //relative bar offset distance
-                  reverseData: false,//Fix.. Change to true
-                  horizontalBars: true,
-                  axisY: {
-                    offset: 1
-                  }
-                },false)
-
-            })
-
-    $('.tomnod-tag-3').attr('src', 'http://tomnod.com/' + response.tags[2].icon_url)//This is get for soccer//
-       .attr('src', 'http://tomnod.com/' + response.tags[2].icon_url)//This is get for tennis//
+          //Start Swim onlick functionality 
           .click(function(){
 
-                  $('.tomnod-tag-featured').attr('src', 'http://tomnod.com/' + response.tags[2].icon_url)
-                  $('.tomnod-hztl-chart-info-top').html(response.tags[2].name + ': ' + response.tags[2].count)
+              // Below controls swim icon displays in center on click
+              $('.tomnod-tag-featured').attr('src', 'http://tomnod.com/' + response.tags[0].icon_url)
+              // Below controls swim data displays in center on click. I added s a semi-colon and a space
+              $('.tomnod-hztl-chart-info-top').html(response.tags[0].name + 's: ' + response.tags[0].count)
+
+              // Below undates bar chart with swim count number
+              barchart.update({
+                labels: [2], //This is for the lower labels on the chart which are hidden
+                series: [
+                  [3000], //Standard 3000 count bar for comparison against swim count
+                  [response.tags[0].count] //This will bring the swim amount in for count key
+                ]
+              },{
+                seriesBarDistance: 0, //relative bar offset distance
+                reverseData: false,//If not changed to false, this bar will be completely full
+                horizontalBars: true, //Specing "true" makes bar in chart horizontal. vertical if false"
+                axisY: {
+                  offset: 1 //Control the horz. pos. of the blue bar to the black bar. but it's in y-axis?-weird
+                }
+              },false) // Update bar chart end
+
+          })
+
+      $('.tomnod-tag-2')
+          .attr('src', 'http://tomnod.com/' + response.tags[1].icon_url)//This is get for tennis icon url//
+          .click(function(){
+
+                  $('.tomnod-tag-featured').attr('src', 'http://tomnod.com/' + response.tags[1].icon_url)
+                  $('.tomnod-hztl-chart-info-top').html(response.tags[1].name + 's: ' + response.tags[1].count)
 
                   barchart.update({
-                    labels: [2],
+                    labels: [2], 
                     series: [
-                      [3000],
-                      [response.tags[2].count]
-                        
+                      [3000], 
+                      [response.tags[1].count] 
                     ]
                   },{
-                    seriesBarDistance: 0, //relative bar offset distance
-                    reverseData: false,//Fix.. Change to true
-                    horizontalBars: true,
+                    seriesBarDistance: 0, 
+                    reverseData: false, 
+                    horizontalBars: true, 
                     axisY: {
-                      offset: 1
+                      offset: 1 
                     }
                   },false)
 
               })
-  //Image source updating ends
+
+      $('.tomnod-tag-3')
+        .attr('src', 'http://tomnod.com/' + response.tags[2].icon_url)//This is get for soccer icon url//
+         .attr('src', 'http://tomnod.com/' + response.tags[2].icon_url)
+            .click(function(){
+
+                    $('.tomnod-tag-featured').attr('src', 'http://tomnod.com/' + response.tags[2].icon_url)
+                    $('.tomnod-hztl-chart-info-top').html(response.tags[2].name + 's: ' + response.tags[2].count)
+
+                    barchart.update({
+                      labels: [2],
+                      series: [
+                        [3000],
+                        [response.tags[2].count]
+                          
+                      ]
+                    },{
+                      seriesBarDistance: 0, 
+                      reverseData: false,
+                      horizontalBars: true,
+                      axisY: {
+                        offset: 1
+                      }
+                    },false)
+
+                })
+       //Image source updating ends
 
 
 
-//Morris Triangular Chart Start--This must be inside the ajax API call so that "response" is correlated with get data becauss it's in same scope//
- Morris.Area({
-            element: 'tomnod-chart',
-            data: [
-              {
-                y: '2015-07-01' //Fictitious start date//
-              , a: 0 //Swimming Pool//
-              , b: 0 //Tennis Court//
-              , c: 0 //Soccer Field//
-              },
+       //Morris Triangular Chart Start--This must be inside the ajax API call so that "response" is correlated with get data because it's in same scope//
+       Morris.Area({
+                  element: 'tomnod-chart', //tomnod chart css name
+                  data: [
+                    {
+                      y: '2015-07-01' //Fictitious start date//
+                    , a: 0 //Swimming Pool//
+                    , b: 0 //Tennis Court//
+                    , c: 0 //Soccer Field//
+                    },
 
-              {
-                y: '2015-07-15' //fictitious end date//
-              , a: response.tags[0].count //Swimming Pool//
-              , b: response.tags[1].count //Tennis Court//
-              , c: response.tags[2].count //Soccer Field//
-              }
-            ],
-
-            gridTextSize: 0,
-
-            grid: false,
-
-            hideHover: 'auto',
-
-            xkey: 'y',  // The name of the data record attribute that contains x-values.//
-            ykeys: ['a', 'b', 'c'], // A list of names of data record attributes that contain y-values.//
-            labels: [response.tags[0].name, response.tags[1].name, response.tags[2].name]  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart. //
-          });
-    //Morris Triangular Chart End
+                    {
+                      y: '2015-07-15' //fictitious end date//
+                    , a: response.tags[0].count //Swimming Pool//
+                    , b: response.tags[1].count //Tennis Court//
+                    , c: response.tags[2].count //Soccer Field//
+                    }
+                  ],
 
 
- //This is a chart from Chartist.com. Also pulled in the CDN from Chartists.com and placed in the head
- barchart = new Chartist.Bar('#tomnod-bar-chart', {//Initializing data that is referenced and updated
-  labels: [1],
-  series: [
-    [326], //This is the first data that will show when the page loads
-    [3000] //This is the compartive bar that will show when the page loads
-  ]
-}, {
-  seriesBarDistance: 0,
-  reverseData: false,//Fix.. Change to true
-  horizontalBars: true,
-  axisY: {
-    offset: 1
-  }
-});
+                  gridTextSize: 0, //This a quick hack to remove all data from showing
+
+                  grid: false, //This a quick hack to remove all lines from showing
+
+                  hideHover: 'auto', //This keeps contextual balloons from popping up on load-only on roll-over
+
+                  xkey: 'y',  // The name of the data record attribute that contains x-values.//
+                  ykeys: ['a', 'b', 'c'], // A list of names of data record attributes that contain y-values.//
+                  labels: [response.tags[0].name, response.tags[1].name, response.tags[2].name]  // Labels for the ykeys -- will be displayed when you hover over the chart
+        
+                });
+          //Morris Triangular Chart End
+
+
+       //Start This is a chart from Chartist.com. Also pulled in the CDN from Chartists.com and placed in the head
+       barchart = new Chartist.Bar('#tomnod-bar-chart', {//Initializing data that is referenced and updated
+        labels: [1],
+        series: [
+          [3000], //First data shown when the page loads--3000 needs to be on top or it will hide 326
+          [326] //This is the compartive bar that will show when the page loads
+        ]
+      }, {
+        seriesBarDistance: 0, 
+        reverseData: false,
+        horizontalBars: true,
+        axisY: {
+          offset: 1
+        }
+      });
+
+      //End Chartist Bar Chart
 
 
 
 
- //Original Chartist Code Start//
+        },//failure warning start, including the comma before this comment, this part alerts offline user if they can't get data from the server//
+        fail: function() {
+          console.log("Sorry there was a problem accessing server.")
+        }//end of failure warning//
+      });
+      //This is the end of the API call//
+
+
+
+
+
+//Original downloaded Chartist Code Start//
 
  /*new Chartist.Bar('.ct-chart', {
   labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -597,50 +442,9 @@ $.ajax({
 
 //https://gionkunz.github.io/chartist-js/examples.html//
 
-//Original Chartist Code End//
+//Original downloaded Chartist Code End//
 
 
-
-
-
-
-
-
-    //Morris Triangular Chart Start--This must be inside the ajax API call so that "response" is correlated with get data becauss it's in same scope//
- // Morris.Area({
- //            element: 'tomnod-chart',
- //            data: [
- //              {
- //                y: '2015-07-01' //Fictitious start date//
- //              , a: 0 //Swimming Pool//
- //              , b: 0 //Tennis Court//
- //              , c: 0 //Soccer Field//
- //              },
-
- //              {
- //                y: '2015-07-15' //fictitious end date//
- //              , a: response.tags[0].count //Swimming Pool//
- //              , b: response.tags[1].count //Tennis Court//
- //              , c: response.tags[2].count //Soccer Field//
- //              }
- //            ],
- //            xkey: 'y',  // The name of the data record attribute that contains x-values.//
- //            ykeys: ['a', 'b', 'c'], // A list of names of data record attributes that contain y-values.//
- //            labels: [response.tags[0].name, response.tags[1].name, response.tags[2].name]  // Labels for the ykeys -- will be displayed when you hover over the
- //  // chart. //
- //          });
-    //Morris Triangular Chart End
-
-
-
-
-
-  },//failure warning start, including the comma before this comment, this part alert offline user if they can't get data from the server//
-  fail: function() {
-    console.log("Sorry there was a problem accessing server.")
-  }//end of failure warning//
-});
-//This is the end of the API call//
 
 
 
